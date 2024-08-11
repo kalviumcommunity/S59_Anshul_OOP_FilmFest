@@ -147,8 +147,8 @@ public class Main {
                                         System.out.print("Enter Movie Genre: ");
                                         String genre = sc.nextLine();
                                         System.out.print("Enter Movie Rating: ");
-                                        String rating = sc.nextLine();
-                                        Movie newMovie = new Movie(title, genre, rating);
+                                        double price = sc.nextFloat();
+                                        Movie newMovie = new Movie(title, genre, price);
                                         movieList.addMovie(newMovie);
                                         System.out.println("Movie added successfully.");
                                         break;
