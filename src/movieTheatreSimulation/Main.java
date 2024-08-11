@@ -6,7 +6,6 @@ import Employee.Employee;
 import Movie.Movie;
 import Movie.MovieList;
 
-
 public class Main {
 
     public static void main(String[] args) {
@@ -129,6 +128,51 @@ public class Main {
                         if (employee.login(loginID)) {
                             System.out.println("Login successful.");
                             employee.displayEmployeeInfo();
+
+                            boolean continueManaging = true;
+                            while (continueManaging) {
+                                System.out.println("1. Add Movie");
+                                System.out.println("2. Delete Movie");
+                                System.out.println("3. View Movies");
+                                System.out.println("4. Exit");
+                                System.out.print("Please enter your choice (1-4): ");
+
+                                int manageChoice = sc.nextInt();
+                                sc.nextLine();
+
+                                switch (manageChoice) {
+                                    case 1:
+                                        System.out.print("Enter Movie Title: ");
+                                        String title = sc.nextLine();
+                                        System.out.print("Enter Movie Genre: ");
+                                        String genre = sc.nextLine();
+                                        System.out.print("Enter Movie Rating: ");
+                                        String rating = sc.nextLine();
+                                        Movie newMovie = new Movie(title, genre, rating);
+                                        movieList.addMovie(newMovie);
+                                        System.out.println("Movie added successfully.");
+                                        break;
+                                    case 2:
+                                        System.out.print("Enter Movie Title to delete: ");
+                                        String movieTitleToDelete = sc.nextLine();
+                                        if (movieList.removeMovie(movieTitleToDelete)) {
+                                            System.out.println("Movie removed successfully.");
+                                        } else {
+                                            System.out.println("Movie not found.");
+                                        }
+                                        break;
+                                    case 3:
+                                        movieList.displayMovies();
+                                        break;
+                                    case 4:
+                                        System.out.println("Exiting...");
+                                        continueManaging = false;
+                                        break;
+                                    default:
+                                        System.out.println("Invalid choice.");
+                                        break;
+                                }
+                            }
                         } else {
                             System.out.println("Invalid Employee ID.");
                         }
