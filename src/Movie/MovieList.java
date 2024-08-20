@@ -8,6 +8,7 @@ public class MovieList {
     private List<Movie> movies;
 
     public MovieList() {
+        // Add (NEW Operation)
         this.movies = new ArrayList<>();
 
         movies.add(new Movie("Inception", "Sci-Fi", 12.99));
