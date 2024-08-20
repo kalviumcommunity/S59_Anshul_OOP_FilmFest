@@ -10,6 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        // Add (NEW Operation)
         MovieList movieList = new MovieList();
 
         System.out.println("Welcome to the Movie Theatre Simulation!");

@@ -12,6 +12,7 @@ public class Customer {
     private List<Movie> cart;
 
     public Customer() {
+        // Add (NEW Operation)
         this.cart = new ArrayList<>();
     }
 
