@@ -148,6 +148,7 @@ public class Main {
                                         String genre = sc.nextLine();
                                         System.out.print("Enter Movie Rating: ");
                                         double price = sc.nextFloat();
+                                        // Add (NEW Operation)
                                         Movie newMovie = new Movie(title, genre, price);
                                         movieList.addMovie(newMovie);
                                         System.out.println("Movie added successfully.");
