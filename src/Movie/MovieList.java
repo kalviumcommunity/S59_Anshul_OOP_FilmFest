@@ -21,6 +21,7 @@ public class MovieList {
     }
 
     public boolean removeMovie(String title) {
+//        Delete Operation Used Here
         return movies.removeIf(movie -> movie.getTitle().equalsIgnoreCase(title));
     }
 
