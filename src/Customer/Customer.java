@@ -10,6 +10,7 @@ public class Customer {
     private String customerID;
     private String name;
     private List<Movie> cart;
+    public static String HELP_MESSAGE = "For assistance, please contact our Customer Care:\n" + "Phone: 1-800-123-4567\n" + "Email: support@movieportal.com";
 
     public Customer() {
         // Add (NEW Operation)

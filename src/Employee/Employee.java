@@ -8,6 +8,9 @@ import java.util.List;
 public class Employee {
     private String employeeID;
     private String name;
+    public static final String HELP_MESSAGE = "For assistance, please contact our Support Team:\n" +
+            "Phone: 1-800-987-6543\n" +
+            "Email: support@movieportal.com";
 
     public Employee(String employeeID, String name) {
         this.employeeID = employeeID;
