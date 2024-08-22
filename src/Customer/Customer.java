@@ -84,4 +84,7 @@ public class Customer {
             System.out.println("Thank you for your purchase!");
         }
     }
+    public static void displayHelp() {
+        System.out.println(HELP_MESSAGE);
+    }
 }

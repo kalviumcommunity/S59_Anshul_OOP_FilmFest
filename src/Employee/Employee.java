@@ -52,4 +52,7 @@ public class Employee {
         this.name = name;
         System.out.println("Registration successful. Your Employee ID is: " + employeeID);
     }
+    public static void displayHelp() {
+        System.out.println(HELP_MESSAGE);
+    }
 }
