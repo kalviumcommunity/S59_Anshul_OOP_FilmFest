@@ -64,7 +64,8 @@ public class Main {
                         System.out.println("2. Add Movie to Cart");
                         System.out.println("3. View Cart");
                         System.out.println("4. Checkout");
-                        System.out.println("5. Exit");
+                        System.out.println("5. Help");
+                        System.out.println("6. Exit");
                         System.out.print("Please enter your choice (1-5): ");
 
                         int actionChoice = sc.nextInt();
@@ -91,6 +92,9 @@ public class Main {
                                 customer.checkout();
                                 break;
                             case 5:
+                                Customer.displayHelp();
+                                break;
+                            case 6:
                                 System.out.println("Exiting...");
                                 continueShopping = false;
                                 break;
@@ -135,7 +139,8 @@ public class Main {
                                 System.out.println("1. Add Movie");
                                 System.out.println("2. Delete Movie");
                                 System.out.println("3. View Movies");
-                                System.out.println("4. Exit");
+                                System.out.println("4. Help");
+                                System.out.println("5. Exit");
                                 System.out.print("Please enter your choice (1-4): ");
 
                                 int manageChoice = sc.nextInt();
@@ -167,6 +172,9 @@ public class Main {
                                         movieList.displayMovies();
                                         break;
                                     case 4:
+                                        Employee.displayHelp();
+                                        break;
+                                    case 5:
                                         System.out.println("Exiting...");
                                         continueManaging = false;
                                         break;
