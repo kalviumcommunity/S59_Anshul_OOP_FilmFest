@@ -13,14 +13,16 @@ public class Employee {
             "Phone: 1-800-987-6543\n" +
             "Email: support@movieportal.com";
 
-    public Employee(String employeeID, String name) {
-        this.employeeID = employeeID;
-        this.name = name;
-    }
-
+    //Default Constructor
     public Employee() {
         this.employeeID = "12345";
         this.name = "";
+    }
+
+    //parameterised Constructor
+    public Employee(String employeeID, String name) {
+        this.employeeID = employeeID;
+        this.name = name;
     }
 
     public String getEmployeeID() {
