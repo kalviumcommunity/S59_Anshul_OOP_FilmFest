@@ -105,7 +105,7 @@ public class Main {
                         }
                     }
                 }
-
+                customer = null;
                 break;
 
             case 2: // Employee
@@ -196,13 +196,13 @@ public class Main {
                         System.out.println("Invalid choice.");
                         break;
                 }
+                employee = null;
                 break;
 
             default:
                 System.out.println("Invalid choice.");
                 break;
         }
-
         sc.close();
     }
 }

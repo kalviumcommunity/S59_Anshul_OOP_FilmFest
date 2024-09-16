@@ -5,6 +5,7 @@ public class Movie {
     private String genre;
     private double price;
 
+    //parameterised Constructor
     public Movie(String title, String genre, double price) {
         this.title = title;
         this.genre = genre;
