@@ -93,6 +93,7 @@ public class Main {
                                 break;
                             case 5:
                                 Customer.displayHelp();
+                                //Static member function
                                 break;
                             case 6:
                                 System.out.println("Exiting...");
@@ -173,6 +174,7 @@ public class Main {
                                         break;
                                     case 4:
                                         Employee.displayHelp();
+                                        //static member function
                                         break;
                                     case 5:
                                         System.out.println("Exiting...");

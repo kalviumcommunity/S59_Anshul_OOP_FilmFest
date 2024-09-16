@@ -22,18 +22,22 @@ public class Employee {
         this.name = "";
     }
 
+    //accessor used
     public String getEmployeeID() {
         return employeeID;
     }
 
+    //mutator used
     public void setEmployeeID(String employeeID) {
         this.employeeID = employeeID;
     }
 
+    //accessor used
     public String getName() {
         return name;
     }
 
+    //mutator used
     public void setName(String name) {
         this.name = name;
     }
