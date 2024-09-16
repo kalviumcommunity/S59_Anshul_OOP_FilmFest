@@ -6,6 +6,7 @@ import java.util.List;
 
 
 public class Employee {
+    //Abstraction Concept Utilized
     private String employeeID;
     private String name;
     public static final String HELP_MESSAGE = "For assistance, please contact our Support Team:\n" +
@@ -22,22 +23,18 @@ public class Employee {
         this.name = "";
     }
 
-    //accessor used
     public String getEmployeeID() {
         return employeeID;
     }
 
-    //mutator used
     public void setEmployeeID(String employeeID) {
         this.employeeID = employeeID;
     }
 
-    //accessor used
     public String getName() {
         return name;
     }
 
-    //mutator used
     public void setName(String name) {
         this.name = name;
     }
