@@ -17,18 +17,22 @@ public class Customer {
         this.cart = new ArrayList<>();
     }
 
+    //accessor Used
     public String getCustomerID() {
         return customerID;
     }
 
+    //mutator used
     public void setCustomerID(String customerID) {
         this.customerID = customerID;
     }
 
+    //accessor Used
     public String getName() {
         return name;
     }
 
+    //mutator used
     public void setName(String name) {
         this.name = name;
     }
