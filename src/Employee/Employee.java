@@ -1,11 +1,12 @@
 package Employee;
 
+import Abstract.User;
 import Movie.Movie;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class Employee {
+public class Employee extends User {
     //Abstraction Concept Utilized
     private String employeeID;
     private String name;
@@ -17,6 +18,12 @@ public class Employee {
     public Employee() {
         this.employeeID = "12345";
         this.name = "";
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println("Customer ID: " + userID);
+        System.out.println("Name: " + name);
     }
 
     //parameterised Constructor
