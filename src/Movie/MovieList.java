@@ -1,6 +1,5 @@
 package Movie;
 
-import Movie.Movie;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,13 +7,19 @@ public class MovieList {
     private List<Movie> movies;
 
     public MovieList() {
-        // Add (NEW Operation)
         this.movies = new ArrayList<>();
 
+        // Add regular movies
         movies.add(new Movie("Inception", "Sci-Fi", 12.99));
         movies.add(new Movie("The Godfather", "Crime", 14.99));
-        movies.add(new Movie("The Shawshank Redemption", "Drama", 11.99));
-        movies.add(new Movie("The Dark Knight", "Action", 13.99));
+
+        // Add animated movies
+        movies.add(new AnimatedMovie("Toy Story", "Animation", 9.99, "Pixar"));
+        movies.add(new AnimatedMovie("Finding Nemo", "Animation", 10.99, "Pixar"));
+
+        // Add documentary movies
+        movies.add(new DocumentaryMovie("Planet Earth", "Documentary", 7.99, "Nature"));
+        movies.add(new DocumentaryMovie("The Last Dance", "Documentary", 8.99, "Michael Jordan"));
     }
 
     public void addMovie(Movie movie) {
@@ -22,7 +27,6 @@ public class MovieList {
     }
 
     public boolean removeMovie(String title) {
-//        Delete Operation Used Here
         return movies.removeIf(movie -> movie.getTitle().equalsIgnoreCase(title));
     }
 
@@ -42,4 +46,3 @@ public class MovieList {
         }
     }
 }
-

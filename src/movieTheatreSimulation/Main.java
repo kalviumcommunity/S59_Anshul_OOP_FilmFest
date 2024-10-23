@@ -2,6 +2,7 @@ package movieTheatreSimulation;
 
 import java.util.Scanner;
 import Customer.Customer;
+import Customer.PremiumCustomer;
 import Employee.Employee;
 import Movie.Movie;
 import Movie.MovieList;
@@ -10,7 +11,6 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // Add (NEW Operation)
         MovieList movieList = new MovieList();
 
         System.out.println("Welcome to the Movie Theatre Simulation!");
@@ -25,31 +25,43 @@ public class Main {
         switch (choice) {
             case 1: // Customer
                 System.out.println("Welcome Customer");
-                System.out.println("Are you already a registered customer?");
-                System.out.println("1. Register");
-                System.out.println("2. Enter CustomerID");
-                System.out.println("3. Exit");
-                System.out.print("Please enter your choice (1, 2, or 3): ");
+                System.out.println("Are you a regular or premium customer?");
+                System.out.println("1. Register as Regular Customer");
+                System.out.println("2. Register as Premium Customer");
+                System.out.println("3. Enter CustomerID");
+                System.out.println("4. Exit");
+                System.out.print("Please enter your choice (1, 2, 3, or 4): ");
 
                 int customerChoice = sc.nextInt();
                 sc.nextLine();
 
-                Customer customer = new Customer();
+                Customer customer = null;
 
                 switch (customerChoice) {
                     case 1:
                         System.out.print("Enter Name: ");
                         String name = sc.nextLine();
+                        customer = new Customer();
                         customer.register(name);
                         break;
                     case 2:
+                        System.out.print("Enter Name: ");
+                        name = sc.nextLine();
+                        System.out.print("Enter Discount Rate (e.g., 0.1 for 10%): ");
+                        double discountRate = sc.nextDouble();
+                        sc.nextLine();
+                        customer = new PremiumCustomer(name, discountRate);
+                        System.out.println("Registration successful. You are now a Premium Customer.");
+                        break;
+                    case 3:
                         System.out.print("Enter CustomerID: ");
                         String enteredID = sc.nextLine();
+                        customer = new Customer();
                         customer.setCustomerID(enteredID);
                         customer.setName("Placeholder Name");
                         customer.displayCustomerInfo();
                         break;
-                    case 3:
+                    case 4:
                         System.out.println("Exiting...");
                         break;
                     default:
@@ -57,7 +69,7 @@ public class Main {
                         break;
                 }
 
-                if (customerChoice == 1 || customerChoice == 2) {
+                if (customerChoice == 1 || customerChoice == 2 || customerChoice == 3) {
                     boolean continueShopping = true;
                     while (continueShopping) {
                         System.out.println("1. View Movies");
@@ -66,7 +78,7 @@ public class Main {
                         System.out.println("4. Checkout");
                         System.out.println("5. Help");
                         System.out.println("6. Exit");
-                        System.out.print("Please enter your choice (1-5): ");
+                        System.out.print("Please enter your choice (1-6): ");
 
                         int actionChoice = sc.nextInt();
                         sc.nextLine();
@@ -93,7 +105,6 @@ public class Main {
                                 break;
                             case 5:
                                 Customer.displayHelp();
-                                //Static member function
                                 break;
                             case 6:
                                 System.out.println("Exiting...");
@@ -142,7 +153,7 @@ public class Main {
                                 System.out.println("3. View Movies");
                                 System.out.println("4. Help");
                                 System.out.println("5. Exit");
-                                System.out.print("Please enter your choice (1-4): ");
+                                System.out.print("Please enter your choice (1-5): ");
 
                                 int manageChoice = sc.nextInt();
                                 sc.nextLine();
@@ -155,7 +166,6 @@ public class Main {
                                         String genre = sc.nextLine();
                                         System.out.print("Enter Movie Rating: ");
                                         double price = sc.nextFloat();
-                                        // Add (NEW Operation)
                                         Movie newMovie = new Movie(title, genre, price);
                                         movieList.addMovie(newMovie);
                                         System.out.println("Movie added successfully.");
@@ -174,7 +184,6 @@ public class Main {
                                         break;
                                     case 4:
                                         Employee.displayHelp();
-                                        //static member function
                                         break;
                                     case 5:
                                         System.out.println("Exiting...");

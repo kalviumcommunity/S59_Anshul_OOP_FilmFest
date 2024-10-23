@@ -1,23 +1,28 @@
 package Customer;
 
-import java.util.Random;
-
 import Movie.Movie;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Customer {
-    //Abstraction Concept Utilized
     private String customerID;
     private String name;
     private List<Movie> cart;
-    public static String HELP_MESSAGE = "For assistance, please contact our Customer Care:\n" + "Phone: 1-800-123-4567\n" + "Email: support@movieportal.com";
+    public static String HELP_MESSAGE = "For assistance, please contact our Customer Care:\n" +
+            "Phone: 1-800-123-4567\n" +
+            "Email: support@movieportal.com";
 
     public Customer() {
-        // Add (NEW Operation)
         this.cart = new ArrayList<>();
     }
 
+    // Getter for cart
+    public List<Movie> getCart() {
+        return cart;
+    }
+
+    // Other methods
     public String getCustomerID() {
         return customerID;
     }
@@ -55,7 +60,6 @@ public class Customer {
         return !customerID.isEmpty();
     }
 
-
     public void addToCart(Movie movie) {
         cart.add(movie);
         System.out.println(movie.getTitle() + " has been added to your cart.");
@@ -85,6 +89,7 @@ public class Customer {
             System.out.println("Thank you for your purchase!");
         }
     }
+
     public static void displayHelp() {
         System.out.println(HELP_MESSAGE);
     }
