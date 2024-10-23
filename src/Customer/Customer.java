@@ -1,11 +1,12 @@
 package Customer;
 
+import Abstract.User;
 import Movie.Movie;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Customer {
+public class Customer extends User {
     private String customerID;
     private String name;
     private List<Movie> cart;
@@ -15,6 +16,12 @@ public class Customer {
 
     public Customer() {
         this.cart = new ArrayList<>();
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println("Customer ID: " + userID);
+        System.out.println("Name: " + name);
     }
 
     // Getter for cart
