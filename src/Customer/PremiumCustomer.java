@@ -12,6 +12,7 @@ public class PremiumCustomer extends Customer {
         this.discountRate = discountRate;
     }
 
+    // runtime polymorphism demonstrated here
     @Override
     public void checkout() {
         if (getCart().isEmpty()) {
