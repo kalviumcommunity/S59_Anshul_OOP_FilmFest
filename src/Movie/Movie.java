@@ -1,5 +1,7 @@
 package Movie;
 
+// Single Responsibility Principle used here
+// SRP used in class MOVIE
 public class Movie {
     private String title;
     private String genre;
