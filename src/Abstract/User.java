@@ -1,5 +1,6 @@
 package Abstract;
 
+// SOLID PRINCIPLE - Open/Close principle used here
 public abstract class User {
     protected String userID; // Common ID for all users
     protected String name;    // Common name for all users
