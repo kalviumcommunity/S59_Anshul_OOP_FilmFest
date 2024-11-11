@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+
+// SOLID PRINCIPLE LSP USED
 public class Customer extends User {
-    private String customerID;
-    private String name;
     private List<Movie> cart;
     public static String HELP_MESSAGE = "For assistance, please contact our Customer Care:\n" +
             "Phone: 1-800-123-4567\n" +
@@ -29,28 +29,6 @@ public class Customer extends User {
         return cart;
     }
 
-    // Other methods
-    public String getCustomerID() {
-        return customerID;
-    }
-
-    public void setCustomerID(String customerID) {
-        this.customerID = customerID;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void displayCustomerInfo() {
-        System.out.println("Customer ID: " + customerID);
-        System.out.println("Name: " + name);
-    }
-
     public static String generateCustomerID() {
         Random random = new Random();
         int id = 100000 + random.nextInt(900000); // Generates a number between 100000 and 999999
@@ -58,13 +36,13 @@ public class Customer extends User {
     }
 
     public void register(String name) {
-        this.customerID = generateCustomerID();
+        this.userID = generateCustomerID();
         this.name = name;
-        System.out.println("Registration successful. Your Customer ID is: " + customerID);
+        System.out.println("Registration successful. Your Customer ID is: " + userID);
     }
 
     public boolean isRegistered() {
-        return !customerID.isEmpty();
+        return !userID.isEmpty();
     }
 
     public void addToCart(Movie movie) {
